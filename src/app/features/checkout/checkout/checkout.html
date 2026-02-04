@@ -1,0 +1,26 @@
+<h2>Checkout</h2>
+
+<div class="checkout-card">
+
+  <!-- ITEMS LIST -->
+  @for (item of cartItems(); track item.id) {
+    <div class="row">
+      <span>{{ item.Title }} × {{ item.quantity }}</span>
+      <span>₹{{ item.price * item.quantity }}</span>
+    </div>
+  }
+
+  <hr />
+
+  <!-- TOTAL -->
+  <div class="row total">
+    <strong>Total</strong>
+    <strong>₹{{ totalPrice() }}</strong>
+  </div>
+
+  <!-- SINGLE BUTTON -->
+  <button class="place" (click)="placeOrder()">
+    Place Order
+  </button>
+
+</div>

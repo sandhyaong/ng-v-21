@@ -38,6 +38,8 @@
     }
 
   </div>
-
   <button class="clear" (click)="clear()">Clear Cart</button>
+  <button class="place" [routerLink]="['/checkout']">
+    Proceed to Checkout
+  </button>
 }

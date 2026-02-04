@@ -1,0 +1,28 @@
+.checkout-card {
+  max-width: 400px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.total {
+  font-size: 18px;
+}
+
+.place {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: #fb641b;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

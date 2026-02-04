@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CartService } from '../../../core/services/cart.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './cart.html',
   styleUrl: './cart.scss',
 })
