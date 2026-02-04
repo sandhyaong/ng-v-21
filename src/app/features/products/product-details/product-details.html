@@ -1,0 +1,6 @@
+@if (product()) {
+  <img [src]="product()?.image" />
+  <h2>{{ product()?.Title }}</h2>
+  <p>{{ product()?.description }}</p>
+  <p>₹{{ product()?.price }}</p>
+}
