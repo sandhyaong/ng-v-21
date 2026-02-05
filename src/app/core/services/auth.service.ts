@@ -17,21 +17,7 @@ export class AuthService {
 
 // State
    user = signal<User | null>(null);
-//    isLoggedIn = signal<boolean>(false);
-//     login(name: string) {
-//         return this.http.post<User>('/api/login', { name }).subscribe({
-//             next: (user) => {
-//                 this.user.set(user);
-//                 this.isLoggedIn.set(true);
-//             },
-//             error: () => {
-//                 this.user.set(null);
-//                 this.isLoggedIn.set(false);
-//             }
-//         });
-//     }
- // DERIVED STATE
-isLoggedIn = computed(() => !!this.user());
+   isLoggedIn = computed(() => !!this.user());
  // ACTIONS
     login(username: string) {
          this.user.set({ name: username });

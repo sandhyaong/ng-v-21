@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { loadInterceptor } from './core/services/loader.interceptor';
+import { errorInterceptor } from './core/services/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -12,7 +13,7 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes), provideClientHydration(withEventReplay()),
     // Registering the HTTP Client with your Interceptor
     provideHttpClient(
-      withInterceptors([loadInterceptor])
+      withInterceptors([loadInterceptor, errorInterceptor])
     )
   ]
 };
