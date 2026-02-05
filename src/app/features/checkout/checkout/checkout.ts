@@ -16,7 +16,13 @@ private toast = inject(ToastService);
    
 cartItems = this.cart.cartItems;
 totalPrice = this.cart.totalPrice;
+
+  // 👇 expose derived state to template
+  toastVisible = this.toast.isVisible;
+
 placeOrder() {
+      if (this.toastVisible()) return;
+      
     this.toast.showToast({
       type: 'success',
       message: 'Order placed successfully 🎉',
@@ -27,6 +33,6 @@ placeOrder() {
     this.cart.clearCart();
 
     // redirect to products / success page
-    this.router.navigate(['/']);
+    this.router.navigate(['/orderSuccess']);
   }
 }

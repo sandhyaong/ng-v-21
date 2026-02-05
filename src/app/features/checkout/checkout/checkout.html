@@ -19,8 +19,11 @@
   </div>
 
   <!-- SINGLE BUTTON -->
-  <button class="place" (click)="placeOrder()">
-    Place Order
+  <button class="place" (click)="placeOrder()" [disabled]="toastVisible()">
+    @if(toastVisible()){
+          Processing... 
+    }
+    @else{ Place Order}
   </button>
 
 </div>

@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { computed, Injectable, signal } from "@angular/core";
 import { sign } from "crypto";
 
 export type toastType = 'success' | 'error' | 'info' | 'warning';
@@ -13,6 +13,9 @@ export interface Toast {
 })
 export class ToastService {
   toast = signal<Toast | null>(null);
+
+    // ✅ DERIVED STATE
+  isVisible = computed(() => this.toast() !== null);
 
   showToast(toast: Toast) {
     this.toast.set(toast);
