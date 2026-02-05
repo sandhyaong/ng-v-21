@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CartService } from '../../../core/services/cart.service';
 import { Router } from '@angular/router';
+import { ToastService } from '../../../core/services/toast.service';
 
 @Component({
   selector: 'app-checkout',
@@ -11,10 +12,16 @@ import { Router } from '@angular/router';
 export class Checkout {
 private cart = inject(CartService);
  private router = inject(Router);
+private toast = inject(ToastService);
+   
 cartItems = this.cart.cartItems;
 totalPrice = this.cart.totalPrice;
 placeOrder() {
-    alert('Order placed successfully 🎉');
+    this.toast.showToast({
+      type: 'success',
+      message: 'Order placed successfully 🎉',
+      duration: 3000
+    });
 
     // step 2: clear cart
     this.cart.clearCart();
